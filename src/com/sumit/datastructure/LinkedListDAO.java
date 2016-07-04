@@ -12,6 +12,8 @@ public class LinkedListDAO {
 		list.insertAtEnd(1000);
 		list.insertAtEnd(10000);
 		list.printList();
+		list.deleteFromEnd();
+		list.printList();
 		LinkedList list2 = new LinkedList();
 		//list2.printList();
 		//
@@ -23,6 +25,10 @@ public class LinkedListDAO {
 		//System.out.println(list2.head.next.data);
 		//LinkedList.intersect(list, list2);
 		list.nthNode(2);
+		System.out.println("--------------");
+		list.printList();
+		
+		list.reverseList();
 		
 	}
 }

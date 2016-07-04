@@ -4,11 +4,28 @@ import java.util.HashSet;
 
 class Node {
 	Node next;
+	Node previous;
 	int data;
+	Node left;
+	Node right;
+
+	public Node(Node next, Node previous, int data) {
+		super();
+		this.next = next;
+		this.previous = previous;
+		this.data = data;
+	}
 
 	public Node(Node next, int data) {
 		this.next = next;
 		this.data = data;
+	}
+
+	public Node(int data, Node left, Node right) {
+		super();
+		this.data = data;
+		this.left = left;
+		this.right = right;
 	}
 
 }
@@ -52,6 +69,7 @@ public class LinkedList {
 			while (temp.next != null) {
 				temp = temp.next;
 			}
+			System.out.println(temp.data);
 			temp.next = newNode;
 			System.out.println("The node has been inserted At End");
 		}
@@ -191,27 +209,36 @@ public class LinkedList {
 
 	}
 
-	public static void reverseList(LinkedList list) {
-		
+	public void reverseList() {
+		Node temp = head;
+		Node temp1 = null;
+
+		while (temp != null) {
+			Node temp2 = temp.next;
+			temp.next = temp1;
+			temp1 = temp;
+			temp = temp2;
+			System.out.println(temp2.data);
+		}
+		head = temp1;
 	}
-	
-	public void nthNode(int nthNode){
-		if(nthNode>size() && nthNode<=0){
+
+	public void nthNode(int nthNode) {
+		if (nthNode > size() && nthNode <= 0) {
 			System.out.println("The Nth node is greater or less than The List Size");
-		}else{
-			int n = size()-nthNode;
+		} else {
+			int n = size() - nthNode;
 			Node temp1 = head;
 			Node temp2 = head;
-			for(int i =0; i<n-1;i++){
-				temp1=temp1.next;
+			for (int i = 0; i < n - 1; i++) {
+				temp1 = temp1.next;
 			}
-			while(temp1.next!=null){
-				temp1=temp1.next;
-				temp2=temp2.next;
+			while (temp1.next != null) {
+				temp1 = temp1.next;
+				temp2 = temp2.next;
 			}
-			System.out.println("The "+nthNode+" from last is "+temp2.data);
+			System.out.println("The " + nthNode + " from last is " + temp2.data);
 		}
 	}
-	
 
 }
