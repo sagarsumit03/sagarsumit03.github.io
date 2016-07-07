@@ -132,18 +132,20 @@ public class DoublyLinkedList {
 
 	}
 
-	public void reverseList(){{
-		    Node temp = head;
-		    Node newHead = head;
-		    System.out.println("The reverse list is");
-		    while (temp != null) {
-		        Node prev = temp.previous;
-		        temp.previous = temp.next;
-		        temp.next = prev;
-		        newHead = temp;
-		        temp = temp.previous;		        
-		        System.out.println(newHead.data);
-		    }
-	}
+	public void reverseList() {
+		{
+			Node temp = head;
+			Node newHead = head;
+			System.out.println("The reverse list is");
+			while (temp != null) {
+				Node prev = temp.previous;
+				temp.previous = temp.next;
+				temp.next = prev;
+				newHead = temp;
+				temp = temp.previous;
+				System.out.println(newHead.data);
+			}
+		}
+
 	}
 }

@@ -1,7 +1,5 @@
 package com.sumit.datastructure;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class StackUsingArray {
 

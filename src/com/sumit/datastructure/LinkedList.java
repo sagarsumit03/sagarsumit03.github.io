@@ -240,5 +240,8 @@ public class LinkedList {
 			System.out.println("The " + nthNode + " from last is " + temp2.data);
 		}
 	}
+	
+	
+	
 
 }

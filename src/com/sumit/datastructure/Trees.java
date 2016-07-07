@@ -10,14 +10,16 @@ package com.sumit.datastructure;
 public class Trees {
 
 	Node root = null;
+	int i = 1;
 
-	public void preOrderTraversal(Node node) {
+	public static Node preOrderTraversal(Node node) {
 		// Root - Left - Right
 		if (node != null) {
 			System.out.println(node.data);
 			preOrderTraversal(node.left);
 			preOrderTraversal(node.right);
 		}
+		return node;
 	}
 
 	public void postOrderTraversal(Node node) {
@@ -26,13 +28,13 @@ public class Trees {
 			postOrderTraversal(node.left);
 			postOrderTraversal(node.right);
 			System.out.println(node.data);
-			
+
 		}
 	}
 
 	public void inOrderTraversal(Node node) {
 		// Left - Root - Right
-		//it is always in increasing sorted order.
+		// it is always in increasing sorted order.
 		if (node != null) {
 			inOrderTraversal(node.left);
 			System.out.println(node.data);
@@ -65,34 +67,112 @@ public class Trees {
 			}
 		}
 	}
-	
-	public void findMin(){
-		if(root== null){
+
+	public void findMin() {
+		if (root == null) {
 			System.out.println("The list is Empty");
-		}else{
+		} else {
 			Node temp = root;
-			while(temp.left!=null){
-				temp=temp.left;				
-			}System.out.println("The Minimum value is "+temp.data);
+			while (temp.left != null) {
+				temp = temp.left;
+			}
+			System.out.println("The Minimum value is " + temp.data);
 		}
 	}
-	
-	public void findMax(){
-		if(root== null){
+
+	public void findMax() {
+		if (root == null) {
 			System.out.println("The list is Empty");
-		}else{
+		} else {
 			Node temp = root;
-			while(temp.right!=null){
-				temp=temp.right;				
-			}System.out.println("The Maximum value is "+temp.data);
+			while (temp.right != null) {
+				temp = temp.right;
+			}
+			System.out.println("The Maximum value is " + temp.data);
 		}
 	}
-	
-	public void delete(int data){
-		if(root==null){
+
+	public void delete(int data) {
+		if (root == null) {
 			System.out.println("the Tree is Empty");
-		}else{
-			//if its leaf node
+		} else {
+			// if its leaf node
+		}
+	}
+
+	public void search(int data) {
+
+		if (data == root.data) {
+
+			System.out.println("The element is found in " + i + " attempt");
+		} else if (data > root.data) {
+			root = root.right;
+			i++;
+			search(data);
+		} else {
+			root = root.left;
+			i++;
+			search(data);
+		}
+	}
+
+	public static boolean sameTree(Node temp1, Node temp2) {
+		if (temp1 == null && temp2 == null) {
+			System.out.println("the tree are same");
+			return true;
+		} else if (temp1 == null || temp2 == null) {
+			System.out.println("the tree are not same");
+			return false;
+		}
+		return temp1.data == temp2.data && sameTree(temp1.right, temp2.right) && sameTree(temp1.left, temp2.left);
+
+	}
+
+	public static void sameTree2(Node temp1, Node temp2) {
+		if (temp1 == null && temp2 == null) {
+			System.out.println("the tree are same");
+		} else if (temp1 == null || temp2 == null) {
+			System.out.println("the tree are not same");
+		} else {
+			if (temp1.data == temp2.data
+					&& ((preOrderTraversal(temp1.left)).data == (preOrderTraversal(temp2.left)).data)
+					&& ((preOrderTraversal(temp1.right)).data == (preOrderTraversal(temp2.right)).data)) {
+				System.out.println("The list are same");
+			} else {
+				System.out.println("The list are not same");
+			}
+		}
+	}
+
+	public int size(Node node) {
+		if (node == null) {
+			System.out.println("The tree is Empty");
+			return 0;
+		} else {
+			return (size(node.left) + 1 + size(node.right));
+		}
+	}
+
+	public void findSum(int data) {
+		int sum = 0;
+		if (root.data == data) {
+			System.out.println("The sum is " + root.data);
+		} else {
+			Node temp = root;
+			while(temp.left!=null|| temp.right!=null){
+				temp.data+=sum;
+				if(sum==data){
+					System.out.println("the sum is found");
+				}else{
+					temp = temp.left;
+					if(temp.left==null){
+						temp = temp.right;
+						if(temp.right==null){
+							break;
+						}
+					}
+				}
+			}
 		}
 	}
 }
