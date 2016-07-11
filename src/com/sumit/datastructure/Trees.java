@@ -175,4 +175,93 @@ public class Trees {
 			}
 		}
 	}
+	
+	public void levelOrderTraversal(Node node) {
+		Queue<Node> queue = new LinkedList<Node>();
+		queue.offer(node);
+		while (!queue.isEmpty()) {
+			node = queue.poll();
+			System.out.println("THe node is " + node.data);
+			if (node.left != null) {
+				queue.add(node.left);
+			}
+			if (node.right != null) {
+				queue.add(node.right);
+			}
+
+		}
+	}
+
+	// check if the Binary tree paassed is a BST or not;
+	public boolean isBST(Node node, int min, int max) {
+		if (node == null) {
+			return true;
+		}
+		if (node.data <= min || node.data > max) {
+			return false;
+		}
+		return isBST(node.left, Integer.MIN_VALUE, node.data) && isBST(node.right, node.data, Integer.MAX_VALUE);
+	}
+
+	public void ReverseBFS(Node node) {
+		Queue<Node> queue = new LinkedList<>();
+		Stack<Node> stack = new Stack<>();
+		Node current = null;
+		queue.offer(node);
+		while (!queue.isEmpty()) {
+			node = queue.poll();
+			current = node;
+			if (node.right != null) {
+				queue.offer(node.right);
+			}
+			if (node.left != null) {
+				queue.offer(node.left);
+			}
+			stack.push(current);
+		}
+		while (!stack.isEmpty()) {
+			System.out.println("The reverse level order traversal is " + stack.peek().data);
+			stack.pop();
+		}
+	}
+
+	/*
+	 * finding the common ancestor of two given nodes; i.e the common root of
+	 * both the nodes.
+	 */
+	public int commonAncestor(int node1, int node2, Node root) {
+		if (node1 > root.data && node2 > root.data) {
+			return commonAncestor(node1, node2, root.left);
+		}
+		if (node1 < root.data && node2 < root.data) {
+			return commonAncestor(node1, node2, root.right);
+		} else
+			return root.data;
+	}
+
+	/*
+	 * finding the common ancestor of the two given nodes in binary tree not
+	 * BST!
+	 */
+	public Node LST(int node1, int node2, Node node) {
+		Node l1 = LST(node1, node2, node.left);
+		Node l2 = LST(node1, node2, node.right);
+		if (l2 != null && l1 != null) {
+			return node;
+		}
+		if (l1 == null && l2 == null) {
+			return null;
+		}
+		return l1 == null ? l1 : l2;
+	}
+	
+	
+	public int height(Node node){
+		if(node==null){
+			return 0;
+		}
+			int leftHeight = height(node.left);
+			int rightHeight = height(node.right);
+		return 1+Integer.max(leftHeight, rightHeight);
+	}
 }
