@@ -3,11 +3,6 @@ package com.sumit.datastructure;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.naming.ldap.HasControls;
-import javax.security.auth.callback.CallbackHandler;
-
-import org.w3c.dom.Node;
-
 //main class 
 public class Trie {
 	/*
