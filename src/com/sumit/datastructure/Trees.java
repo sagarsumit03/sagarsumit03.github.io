@@ -1,5 +1,9 @@
 package com.sumit.datastructure;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 /*
  * Doubly Linked List is used for Binary Tree
  * Binary tree have 0-1-2 children.
@@ -204,7 +208,7 @@ public class Trees {
 	}
 
 	public void ReverseBFS(Node node) {
-		Queue<Node> queue = new LinkedList<>();
+		Queue<Node> queue = new java.util.LinkedList<Node>();
 		Stack<Node> stack = new Stack<>();
 		Node current = null;
 		queue.offer(node);

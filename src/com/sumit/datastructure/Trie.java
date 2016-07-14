@@ -1,43 +1,119 @@
 package com.sumit.datastructure;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-//main class 
-public class Trie {
-	/*
-	 * A trie data structure is a data structure used for storing majorly trie
-	 * structure is used to store Strings like a dictionary in which you have
-	 * flexibility to search prefix letters or the whole words. The hashtable
-	 * can do the trick but it is more space n time consuming the trie takes
-	 * nlogn time complexity.
-	 */
+import org.omg.CORBA.Current;
 
-	/*
-	 * Private class to create Node which contains a Map and a boolean value
-	 * endofword which states if the word entered in trie is complete or not.
-	 */
-	private class TrieNode {
-		Map<Character, TrieNode> child;
-		boolean endOfWord;
+/*
+ * Trie Data structure is a data Structure used for storing large number 
+ * of Strings for example Dictionary and other big chunks of library.
+ * Trie data structure is more useful than HashTable because it needs lesser 
+ * space and has better performance under worst case.
+ * insertion is O(n) where n is the length of String
+ * searching is O(n) where n is the length of String
+ * deletion is    
+ * Space Complexity is high - 
+ 
 
-		// Constructor to initialize the child node.
-		public TrieNode() {
-			super();
-			child = new HashMap<>();
-			this.endOfWord = false;
-		}
+	Node Class. creates a HashMap That will store the current character and the 
+	next node pointer. In addition there will be a endOfWord that will be 
+	for depicting if the character is the end of the word or not.
+	*/
+class TrieNode {
+	Map<Character, TrieNode> child;
+	boolean endOfWord;
+
+	// Contructor for initializing the HashMap and the endofWord to False;
+	public TrieNode() {
+		child = new HashMap<>();
+		endOfWord = false;
 	}
+}
 
-	// creating a root;
-	TrieNode root;
+// Mai class
+public class Trie {
 
-	// initializing a root using a constructor;
+	// The root Node
+	final TrieNode root;
+
+	// Initializing the root Node.
 	public Trie() {
 		root = new TrieNode();
 	}
 
-	// inserting into the trie datastructure.
-	public void insertInto(String word) {
+	// Insert the word given by character by character
+	public void insert(String word) {
+		// creating a current not and set it to point to the root of the Trie.
+		TrieNode current = root;
+		// looping through the whole word character by charater.
+		for (int i = 0; i < word.length(); i++) {
+			char ch = word.charAt(i);
+			/*
+			 * temp is having current's value of the character and Node to next
+			 * pointer ie the temp is having temp = current's (character at i,
+			 * pointer to next Node)
+			 */
+			TrieNode temp = current.child.get(ch);
+			if (temp == null) {
+				// if the temp is null initialize the temp node.
+				temp = new TrieNode();
+				// and add the current charater and a new empty temp in the
+				// current;
+				current.child.put(ch, temp);
+			}
+			// dont put else here as this will make assign temp's value in
+			// current
+			// ie temp = temp.next
+			current = temp;
+
+		}
+		// mark the current nodes endOfWord as true
+		current.endOfWord = true;
 	}
+
+	public boolean search(String word) {
+		TrieNode current = root;
+		for (int i = 0; i < word.length(); i++) {
+			char ch = word.charAt(i);
+			TrieNode temp = current.child.get(ch);
+			// if node does not exist for given char then return false
+			if (temp == null) {
+				return false;
+			}
+			current = temp;
+		}
+		// return true of current's endOfWord is true else return false.
+		return current.endOfWord;
+	}
+
+	public String longSubString(String word) {
+		String subs = "";
+		int count = 0;
+		TrieNode current = root;
+		if (word == null) {
+			return null;
+		} else {
+			
+			for(int i = 0; i < word.length(); i++) {
+				char ch = word.charAt(i);
+				TrieNode temp = current.child.get(ch);
+				if (temp == null) {
+					return null;
+				}
+				subs += ch;
+				count++;
+				current = temp;
+				if(current.endOfWord){
+					 break;
+				}else{
+					continue;
+				}
+			}
+		}if( current.endOfWord)
+            return subs.substring(0, count);        
+
+    else return subs;
+	}
+	
+	
 }
