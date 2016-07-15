@@ -93,8 +93,8 @@ public class Trie {
 		if (word == null) {
 			return null;
 		} else {
-			
-			for(int i = 0; i < word.length(); i++) {
+
+			for (int i = 0; i < word.length(); i++) {
 				char ch = word.charAt(i);
 				TrieNode temp = current.child.get(ch);
 				if (temp == null) {
@@ -103,17 +103,45 @@ public class Trie {
 				subs += ch;
 				count++;
 				current = temp;
-				if(current.endOfWord){
-					 break;
-				}else{
+				if (current.endOfWord) {
+					break;
+				} else {
 					continue;
 				}
 			}
-		}if( current.endOfWord)
-            return subs.substring(0, count);        
+		}
+		if (current.endOfWord)
+			return subs.substring(0, count);
 
-    else return subs;
+		else
+			return subs;
 	}
-	
-	
+
+	public boolean delete(TrieNode node, String word, int index) {
+		TrieNode temp = null;
+		char c = 0;
+		if (node == null) {
+			return false;
+		} else {
+			for (int i = 0; i < word.length(); i++) {
+				c = word.charAt(i);
+				if (i == index - 1) {
+					temp = node.child.get(c);
+				}
+				node.child.get(c);
+			}
+		}
+		if (node.child.containsKey(c) && node.endOfWord==true) {
+			node = null;
+			return true;
+		} else if (node.child.containsKey(c) && !node.endOfWord==false) {
+			node = null;
+			temp.endOfWord = true;
+			node = temp;
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 }

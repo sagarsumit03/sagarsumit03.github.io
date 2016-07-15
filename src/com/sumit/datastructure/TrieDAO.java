@@ -13,8 +13,9 @@ public class TrieDAO {
 		
 		System.out.println(trie.longSubString("APPLES"));
 
-		//trie.delete("APPLE", trie, 2);
-		//System.out.println(trie.search("APPLE"));
+		trie.delete(trie.root, "APPLE", 2);
+		System.out.println(trie.search("MISS"));
+		System.out.println(trie.search("AP"));
 	}
 
 }
