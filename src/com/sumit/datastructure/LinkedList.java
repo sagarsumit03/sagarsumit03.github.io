@@ -1,34 +1,7 @@
 package com.sumit.datastructure;
 
 import java.util.HashSet;
-
-class Node {
-	Node next;
-	Node previous;
-	int data;
-	Node left;
-	Node right;
-
-	public Node(Node next, Node previous, int data) {
-		super();
-		this.next = next;
-		this.previous = previous;
-		this.data = data;
-	}
-
-	public Node(Node next, int data) {
-		this.next = next;
-		this.data = data;
-	}
-
-	public Node(int data, Node left, Node right) {
-		super();
-		this.data = data;
-		this.left = left;
-		this.right = right;
-	}
-
-}
+import com.sumit.datastructure.Node;
 
 public class LinkedList {
 	public Node head;
@@ -240,8 +213,5 @@ public class LinkedList {
 			System.out.println("The " + nthNode + " from last is " + temp2.data);
 		}
 	}
-	
-	
-	
 
 }
