@@ -25,10 +25,6 @@ public class PointerNum {
 		}
 		return counter;
 	}
-	
-	public static void main(String[] args) {
-		
-
-	}
+	// called in the LinkedListDAO.java class.
 
 }
