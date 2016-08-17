@@ -1,5 +1,7 @@
 package com.sumit.algorithm;
 
+import java.util.Arrays;
+
 public class SortingAlgo {
 
 	private int count;
@@ -59,19 +61,28 @@ public class SortingAlgo {
 		}
 
 	}
-	
-	
-	public void insertionSort(int[] arr){
-		int i =0;
-		int j =1;
-		while(i<arr.length){
-			if(arr[j]<arr[i]){
-				swap(arr, arr[i], arr[j]);
-				j++;
-			}else{
-				j++;
-				
+
+	public void insertionSort(int[] arr) {
+		int i = 1;
+		int j = i - 1;
+		int k =0;
+		while (i < arr.length) {
+			k=i;
+			System.out.println("the init value of i is"+i);
+			while (j >= 0) {
+				System.out.println("the init value of j is"+j);
+				if (arr[j] > arr[i]) {
+					swap(arr, j, i);
+					System.out.println("after swap value at "+i+" is "+arr[i]);
+					System.out.println("after swap value of "+j+" is "+arr[j]);
+				}
+				j--;
+				i--;
 			}
+			i=k+1;
+			j = i - 1;
 		}
+		System.out.println(Arrays.toString(arr));
+
 	}
 }
