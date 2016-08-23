@@ -1,6 +1,5 @@
 package com.sumit.algorithm;
 
-import java.util.Arrays;
 
 public class SortingAlogTest {
 
