@@ -32,7 +32,7 @@ public class BitMask {
 		 * turned on in either of the numbers. 1001 | 1100 = 1101, since only
 		 * the second bit from the right is zero in both.
 		 */
-		b = (a & (2 - 1)); // Either we can use this insted of a%2 or the below
+		b = (a & (2 - 1)); // Either we can use this instead of a%2 or the below
 							// one.
 		c = a & 1;
 		if (c == 0) {
