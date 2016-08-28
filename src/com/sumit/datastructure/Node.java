@@ -6,7 +6,31 @@ public class Node {
 	int data;
 	Node left;
 	Node right;
-	Node down; //added for question of com.sumit.careercup.Flattern class 
+	Node down; // added for question of com.sumit.careercup.Flattern class
+
+	public Node getPrevious() {
+		return previous;
+	}
+
+	public void setPrevious(Node previous) {
+		this.previous = previous;
+	}
+
+	public Node getLeft() {
+		return left;
+	}
+
+	public void setLeft(Node left) {
+		this.left = left;
+	}
+
+	public Node getRight() {
+		return right;
+	}
+
+	public void setRight(Node right) {
+		this.right = right;
+	}
 
 	public Node getDown() {
 		return down;
@@ -56,12 +80,5 @@ public class Node {
 		this.data = data;
 		this.down = down;
 	}
-	
-	
-	
-	
-	
-	
-
 
 }

@@ -183,8 +183,10 @@ public class Trees {
 	public void levelOrderTraversal(Node node) {
 		Queue<Node> queue = new LinkedList<Node>();
 		queue.offer(node);
+		//The offer method inserts an element if possible
 		while (!queue.isEmpty()) {
 			node = queue.poll();
+			//
 			System.out.println("THe node is " + node.data);
 			if (node.left != null) {
 				queue.add(node.left);

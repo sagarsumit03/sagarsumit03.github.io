@@ -1,5 +1,7 @@
 package com.sumit.datastructure;
 
+import com.sumit.leetcode.FlipBinaryTree;
+
 public class TreesDAO {
 
 	public static void main(String[] args) {
@@ -38,6 +40,8 @@ public class TreesDAO {
 		tree1.insert(6);
 		
 		Trees.sameTree2(tree.root, tree1.root);
+		FlipBinaryTree br = new FlipBinaryTree();
+		br.flipIt(tree.root);
 		//System.out.println("the trees are "+ab);
 	}
 
