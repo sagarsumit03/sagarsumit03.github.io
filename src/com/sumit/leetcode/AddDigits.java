@@ -16,7 +16,6 @@ public class AddDigits {
 	int n = 0;
 
 	public int digitalRoot(int num) {
-		int i = 0;
 		if (num == 0){
             return 0;
         }

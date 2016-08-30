@@ -1,5 +1,9 @@
 package com.sumit.leetcode;
 
+/*
+ * https://leetcode.com/problems/nim-game/
+ */
+
 public class OptimalSol {
 
 	public static void main(String[] args) {

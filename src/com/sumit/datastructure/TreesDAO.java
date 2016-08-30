@@ -41,7 +41,6 @@ public class TreesDAO {
 		
 		Trees.sameTree2(tree.root, tree1.root);
 		FlipBinaryTree br = new FlipBinaryTree();
-		br.flipIt(tree.root);
 		//System.out.println("the trees are "+ab);
 	}
 
