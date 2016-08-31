@@ -1,11 +1,14 @@
 package com.sumit.leetcode;
 
+import java.util.ArrayList;
+
 /*
  * https://leetcode.com/problems/find-the-difference/
  */
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class StringCompare {
@@ -17,13 +20,14 @@ public class StringCompare {
 		String n ="";
 		char[] ar = s.toCharArray();
 		char[] ar1 = t.toCharArray();
-		Set set = new HashSet(Arrays.asList(ar));
+		List set = new ArrayList(Arrays.asList(ar));
 		while(i<ar1.length){
-			if(set.contains(ar1[i])){
+			if(set.contains(t.charAt(i))){
 				i++;
 				continue;
 			}else{
 				n+=ar[i];
+				System.out.println(n);
 				i++;
 			}
 		}
