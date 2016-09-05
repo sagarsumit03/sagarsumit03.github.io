@@ -1,7 +1,9 @@
 package com.sumit.datastructure;
 
 public class Node {
-	Node next;
+	public Node next;
+	
+
 	Node previous;
 	int data;
 	Node left;
@@ -38,6 +40,10 @@ public class Node {
 
 	public void setDown(Node down) {
 		this.down = down;
+	}
+	
+	public Node() {
+		super();
 	}
 
 	public Node(Node next, Node previous, int data) {
