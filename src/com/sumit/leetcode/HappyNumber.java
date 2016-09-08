@@ -13,7 +13,7 @@ public class HappyNumber {
 
 	}
 
-	public boolean isHappy(int n) {
+	/*public boolean isHappy(int n) {
 		int temp = 0;
 		while (true) {
 			temp += Math.pow(n % 10, 2);
@@ -32,5 +32,10 @@ public class HappyNumber {
 				temp = 0;
 			}
 		}
+	}*/
+	
+	
+	public boolean isHappy(int a){
+	return false;
 	}
 }
