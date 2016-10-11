@@ -12,8 +12,8 @@ import java.util.Stack;
  */
 
 public class Trees {
-
-	Node root = null;
+	//Changed visibility of root
+	public Node root = null;
 	int i = 1;
 
 	public static Node preOrderTraversal(Node node) {
