@@ -131,6 +131,7 @@ public class LinkedList {
 			System.out.println(temp.data);
 			temp1 = temp.next;
 			temp.next = temp.next.next;
+			temp1.next=null;
 
 		}
 	}

@@ -18,7 +18,8 @@ public class Quoted {
 
 	public void unQuote() throws IOException {
 		String s = null;
-		File file = new File("C:\\Users\\SXS543\\Desktop\\abc.txt");
+		File file = new File("C:\\abc.txt");
+		//System.out.println(file.canRead());
 		try {
 			BufferedReader input = new BufferedReader(new FileReader(file));
 			while((s=input.readLine())!=null){

@@ -1,5 +1,9 @@
 package com.sumit.datastructure;
 
+/*
+ * http://www.algo-faq.com/Stacks-and-Queues/How-to-implement-a-Stack-using-two-Queues.php
+ */
+
 public class Stacks {
 
 	LinkedList list = new LinkedList();

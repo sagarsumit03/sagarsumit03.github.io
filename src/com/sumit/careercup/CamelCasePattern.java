@@ -1,7 +1,5 @@
 package com.sumit.careercup;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 /*
@@ -21,7 +19,7 @@ public class CamelCasePattern {
 		String n = "/* without the block comment";
 		String pat = "/*.*.*/";
 		Pattern p = Pattern.compile(pat);
-		boolean k = Pattern.matches(n, pat);
+		boolean k = Pattern.matches(s, pat);
 		System.out.println(k);
 	}
 

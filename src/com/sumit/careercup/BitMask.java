@@ -17,7 +17,7 @@ public class BitMask {
 		 * for the number 5 the binary bits are : 00000101
 		 * hence the Bitwise and for 5 & 1 will be : 0000001 in decimal =1
 		 * and bitwise for 6 & 1 will be : 0000000 in decimal= 0; 
-		 * asno common bit is TURNED ON.
+		 * also common bit is TURNED ON.
 		 * 
 		 * note: An integer is represented as a sequence of bits in memory. For
 		 * interaction with humans, the computer has to display it as decimal
