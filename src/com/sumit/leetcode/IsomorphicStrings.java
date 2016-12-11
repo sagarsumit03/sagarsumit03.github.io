@@ -23,7 +23,7 @@ import java.util.*;
 public class IsomorphicStrings {
 
 	public static void main(String[] args) {
-		String s = "foo";
+		String s = "fon";
 		String b = "egg";
 		IsomorphicStrings is = new IsomorphicStrings();
 		System.out.println(is.isIsomorphic(s, b));
