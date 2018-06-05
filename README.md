@@ -1,22 +1,3 @@
-Skip to content
-Microsoft is acquiring GitHub! Read our blog and Satya Nadella's post to learn more.
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- @sagarsumit03
-Sign out
-15
-342 146 flexdinesh/dev-landing-page
- Code  Issues 1  Pull requests 1  Projects 0  Wiki  Insights
-dev-landing-page/index.html
-2ec0441  on Mar 11
-@flexdinesh flexdinesh Fix: favicon not showing up
-     
-43 lines (40 sloc)  2.18 KB
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,16 +41,3 @@ dev-landing-page/index.html
 	</main>
 </body>
 </html>
-© 2018 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
-Press h to open a hovercard with more details.
